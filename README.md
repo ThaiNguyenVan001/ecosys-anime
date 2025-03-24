@@ -45,14 +45,26 @@ The response will return `400 Bad Request` with detailed error information in th
 | `code`   |  `string`  | Mã của nhóm định danh. |
 | `vehicle-type`   |  `VehicleType`  |  Loại phương tiện. |
 | `enabled`| `bool`| Trạng thái, mặc định là true |
-| `attributes`|`array<AccesskeyAttribute>`| Các thuộc tính của nhóm định danh.| 
+| `attributes`|`array<AccessKeyCollectionAttribute>`| Các thuộc tính của nhóm định danh.| 
 
-- `AccesskeyAttribute`
+- `AccessKeyCollectionAttribute`
 
 | Parameter | Type  | Description                |
 | :-------- | :-------|:------------------------- |
 | `name`   |  `string`  | Tên của thuộc tính. |
-| `value`   |  `string`  | Giá trị  |
+| `value`   |  `dynamic`  | Giá trị  |
+
+Rules for attributes
+
+| Name | Value  | ValueType | Description                |
+| :-------- | :-------|:----- |:------------------------- |
+| `type`   |  MONTHLY | string | Loại nhóm định danh(0:MONTHLY, 1: DAILY, 2: VIP).|
+| `entry_by_loop`   | true | bool | Sử dụng loop khi vào? |
+| `exit_by_loop`   | true | bool | Sử dụng loop khi ra? |
+| `plate_number.validation.level`| EXACTLY | string | Mức độ so sánh biển |
+| `plate_number.validation.method`| BOTH | string   | Cách thức so sánh biển |
+| `lanes`|["`DeviceId`"]|string| Danh sách làn |
+
 
 - `AccessKey`: Định danh
 
@@ -73,7 +85,7 @@ The response will return `400 Bad Request` with detailed error information in th
 | `id` | `uuid` | Id của thiết bị. |
 | `name`   |  `string`  | Tên thiết bị. |
 | `code`   |  `string`  | Mã thiết bị. |
-| `type`   |  `DeviceType`| Loại thiết bị. |
+| `type`   |  `DeviceType`| Loại thiế bị. |
 | `enabled` | `bool`| Trạng thái. |
 | `parent` | `Device`| Thiết bị.| 
 
