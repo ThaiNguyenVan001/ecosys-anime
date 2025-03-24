@@ -3,7 +3,7 @@
 ## Generic
 ### Conventions
 
-The base URL to send all API requests is  `http://14.160.26.45:5000`.
+The base URL to send all API requests is  `http://14.160.26.45:5000`, oauth base URL is `http://14.160.26.45:3000`.
 
 The API follows RESTful conventions when possible,The API follows RESTful conventions whenever possible, and all requests must be authenticated before use.
 
@@ -98,7 +98,30 @@ Rules for attributes
 
 ## API Reference
 
+### Authentication
+
 ### Devices(Lane)
+
+```http
+POST /connec/token
+``` 
+`x-wwww-form-urlencoded`
+
+| Parameter | Type  |  Required |
+| :-------- | :-------| :------- |
+| `client_id`   |  `string`  | `Yes`  |
+| `client_secret`   |  `string`  | `Yes`  |
+| `grant-type`   |  `string`  | `Yes`  |
+
+ `Response`
+
+
+| Parameter | Type  | Description                |
+| :-------- | :-------|:------------------------- |
+| `access_token`   |  `string`  | Token dùng để đăng nhập. |
+| `expires_in`   |  `int`  | Thời hạn token. |
+| `token_type`   |  `string`  | Loại token. |
+| `scope`| `string`| `No` | scope |
 
 #### Search
 
