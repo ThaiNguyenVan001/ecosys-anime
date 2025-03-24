@@ -1,11 +1,4 @@
-## IParking 8
-
-<div align="center">
-   <img src="	https://readmemaker.com/static/media/logo.95b37b622ac102be3dec.png" width="150px" alt="Project Logo" />
-    <h1>IParking 8</h1>
-</div>
-
-# Document
+# IParking 8
 
 ## Generic
 ### Conventions
@@ -44,13 +37,52 @@ The response will return `400 Bad Request` with detailed error information in th
 ### Object
 
 - `AccessKeyCollection` : Nhóm định danh
+
+| Parameter | Type  | Description                |
+| :-------- | :-------|:------------------------- |
+| `id`|||
+| `name`   |  `string`  | Tên của nhóm định danh. |
+| `code`   |  `string`  | Mã của nhóm định danh. |
+| `vehicle-type`   |  `VehicleType`  |  Loại phương tiện. |
+| `enabled`| `bool`| Trạng thái, mặc định là true |
+| `attributes`|`array<AccesskeyAttribute>`| Các thuộc tính của nhóm định danh.| 
+
+- `AccesskeyAttribute`
+
+| Parameter | Type  | Description                |
+| :-------- | :-------|:------------------------- |
+| `name`   |  `string`  | Tên của thuộc tính. |
+| `value`   |  `string`  | Giá trị  |
+
 - `AccessKey`: Định danh
-- `Lane`: Làn
+
+| Parameter | Type  | Description                |
+| :-------- | :-------|:------------------------- |
+| `id` | `uuid` | Id của định danh. |
+| `name`   |  `string`  | Tên của định danh. |
+| `code`   |  `string`  | Mã của định danh. |
+| `collection`   |  `AccessKeyCollection`| Nhóm định danh. |
+| `status` | `AccessKeyStatus`| Trạng thái. |
+| `type` | `AccessKeyType`| Loại định danh.| 
+| `note` | `string` | Ghi chú.| 
+
+- `Device`: Thiết bị 
+
+| Parameter | Type  | Description                |
+| :-------- | :-------|:------------------------- |
+| `id` | `uuid` | Id của thiết bị. |
+| `name`   |  `string`  | Tên thiết bị. |
+| `code`   |  `string`  | Mã thiết bị. |
+| `type`   |  `DeviceType`| Loại thiết bị. |
+| `enabled` | `bool`| Trạng thái. |
+| `parent` | `Device`| Thiết bị.| 
 
 ### Enum
+
 - `AccessKeyStatus`: Trạng thái của định danh, 0: Locked, 1: Use, 2: UnUse
 - `VehicleType`: Loại phương tiện, 0 : Car , 1 : MotorBike, 2: Bike
 - `AccessKeyType`: Loại định danh, 0: Vehicle, 1: Card, 2: QrCode
+- `DeviceType`: Loại thiết bị, 0: Gate, 1: Computer, 2: Camera, 3: ControlUnit, 4: Lane, 5: Led 
 
 ## API Reference
 
@@ -128,8 +160,8 @@ POST /access-keys
 | `code`   |  `string`  | `Yes`  | Mã của định danh. |
 | `collectionid`   |  `Uuid`  | `Yes`  | Id của nhóm định danh. |
 | `status` | `AccessKeyStatus`| `Yes` | Trạng thái. |
-| `type` | `AccessKeyType` | Loại định danh.| 
-| `note` | `string` | Ghi chú.| 
+| `type` | `AccessKeyType`|`Yes` | Loại định danh.| 
+| `note` | `string` |`No` |Ghi chú.| 
 
 #### Update
 
@@ -143,8 +175,8 @@ PUT /access-keys/{id}
 | `code`   |  `string`  | `Yes`  | Mã của định danh. |
 | `collectionid`   |  `Uuid`  | `Yes`  | Id của nhóm định danh. |
 | `status` | `AccessKeyStatus`| `Yes` | Trạng thái. |
-| `type` | `AccessKeyType` | Loại định danh.| 
-| `note` | `string` | Ghi chú.| 
+| `type` | `AccessKeyType`|`Yes` | Loại định danh.| 
+| `note` | `string` |`No` |Ghi chú.| 
 
 #### Get by id
 
