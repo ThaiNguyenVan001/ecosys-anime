@@ -98,6 +98,22 @@ Rules for attributes
 
 ## API Reference
 
+### Devices(Lane)
+
+#### Search
+
+```http
+POST /devices/search
+``` 
+
+| Parameter | Type  
+| :-------- | :-------|
+| `pageIndex`   |  `int`  |
+| `pageSize`   |  `int`  |
+| `filter`| `string` |
+
+Default filter: "{\"and\":[{\"queryType\":\"TEXT\",\"operation\":\"eq\",\"queryKey\":\"type\",\"queryValue\":\"4\"}]}"
+
 ### Access Key Collection
 
 #### Search
