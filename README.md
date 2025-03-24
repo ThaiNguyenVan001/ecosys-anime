@@ -152,7 +152,7 @@ PUT /access-key-collections/{id}
 | `code`   |  `string`  | `Yes`  | Mã của nhóm định danh. |
 | `vehicle-type`   |  `VehicleType`  | `Yes`  | Loại phương tiện. |
 | `enabled`| `bool`| `No` | Trạng thái, mặc định là true |
-| `attributes`|`array<object>`| `No` | các thuộc tính của nhóm định danh.|
+| `attributes`|`array<AccessKeyCollectionAttribute>`| `No` | các thuộc tính của nhóm định danh.|
 
 #### Get by id
 
@@ -215,12 +215,4 @@ GET /access-keys/{id}
 
 ```http
 DELETE /access-keys/{id}
-```
-
-## Contact
-
-For any inquiries or feedback, reach out to us:
-
-- **Email**: [cskh@kztek.com]
-
-We look forward to hearing from you!
+``` 
