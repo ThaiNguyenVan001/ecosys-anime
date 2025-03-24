@@ -121,7 +121,7 @@ POST /connec/token
 | `access_token`   |  `string`  | Token dùng để đăng nhập. |
 | `expires_in`   |  `int`  | Thời hạn token. |
 | `token_type`   |  `string`  | Loại token. |
-| `scope`| `string`| `No` | scope |
+| `scope`| `string`| scope |
 
 #### Search
 
