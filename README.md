@@ -3,7 +3,7 @@
 ## Generic
 ### Conventions
 
-The base URL to send all API requests is  `http://192.168.21.231`.
+The base URL to send all API requests is  `http://14.160.26.45:5000`.
 
 The API follows RESTful conventions when possible,The API follows RESTful conventions whenever possible, and all requests must be authenticated before use.
 
@@ -31,8 +31,8 @@ The response will return `400 Bad Request` with detailed error information in th
 | `ERROR.ENTITY.VALIDATION.FIELD_INVALID`|The submitted field is invalid.|
 | `ERROR.ENTITY.VALIDATION.FIELD_DUPLICATED`|The submitted field already exists in the system.|
 | `ERROR.ENTITY.VALIDATION.FIELD_NOT_ACTIVE`| The entity is not yet active. |
-|`ERROR.ENTITY.NOT_FOUND.SOME_ITEMS_DELETED`| Some entities do not exist in the system.|
-|`ERROR.ENTITY.VALIDATION.FIELD_REQUIRED`| Required. |
+| `ERROR.ENTITY.NOT_FOUND.SOME_ITEMS_DELETED`| Some entities do not exist in the system.|
+| `ERROR.ENTITY.VALIDATION.FIELD_REQUIRED`| Required. |
 
 ### Object
 
@@ -215,4 +215,12 @@ GET /access-keys/{id}
 
 ```http
 DELETE /access-keys/{id}
-``` 
+```
+
+## Contact
+
+For any inquiries or feedback, reach out to us:
+
+- **Email**: [cskh@kztek.com]
+
+We look forward to hearing from you!
